@@ -1,0 +1,420 @@
+<link href="styles.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+
+
+
+<html>
+    <div class="body">
+    <div id="nav-bar">
+        <span id="nav-top"></span>
+        <span id="nav-bottom"></span>
+        <h1 class="title">Environmental EQ</h1>
+    <div id="dropdown-container">
+        <select id="dropdown-menu" onchange="switchDiv()">
+          <option value="" selected disabled hidden>Select Layers</option>
+          <option value="1home">Home</option>
+          <option value="2env-health">Environmental Health</option>
+          <option value="3soc-econ">Socioeconomic Conditions</option>
+          <option value="4pub-health">Public Health Outcomes</option>
+          <option value="5clim-risk">Climate Risk</option>
+          <option value="6econ">Economic Conditions</option>
+          <option value="7demo">Demographics</option>
+          <option value="8cejs-status">White House CEJS Statuses</option>
+          <option value="9thresh-1">CEJS Thresholds (1/2)</option>
+          <option value="10thresh-2">CEJS Thresholds (2/2)</option>
+        </select>
+      </div>
+      
+      <div id="1home" style="display:block;">
+        <div class="checkbox-container">
+          <label class="container">Environmental Health Index
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['env_index'])" checked>
+            <span class="checkmark"></span>
+          </label>
+          <h4 class="section-title">Socioeconomic Factors</h4>
+          <label class="container">Share White
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['share_white'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Share Black
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['share_black'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Share Hispanic
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['share_hispanic'])" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Income
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['income'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Rent
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['rent'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Linguistic Isolation
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Childhood Opportunity
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <h4 class="section-title">Environmental Health</h4>
+          <label class="container">Extreme Heat Risk
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">PM2.5 Pollution
+            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this);colorSwitch(layers_dict['PM25'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Population Loss Rate
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Traffic Proximity
+            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this);colorSwitch(layers_dict['cat_exceeded'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Asthma Rate
+            <input type="radio" name="radio" value="option13" onclick="checkboxClick(this);colorSwitch(layers_dict['asthma'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Heart Disease Rate
+            <input type="radio" name="radio" value="option14" onclick="checkboxClick(this);colorSwitch(layers_dict['heart'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Life Expectancy
+            <input type="radio" name="radio" value="option15" onclick="checkboxClick(this);colorSwitch(layers_dict['life_expectancy'])">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+    </div>
+    <div id="2env-health" style="display:none;">
+      <div class="checkbox-container">
+        <h4 class="section-title">Environmental Health</h4>
+        <label class="container">Environmental Health Index
+          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">PM2.5 Pollution
+          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Diesel Pollution
+          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Heat Index
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Traffic Proximity
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Lead Paint
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Superfund Site Proximity
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">RMP Facility Proximity
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">FUDS Site Proximity
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Abandoned Mine Presence
+            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Impervious Surface
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Greater than 35 Acres
+            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Wastewater Discharge
+            <input type="radio" name="radio" value="option13" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Leaky Underground Storage Tanks
+            <input type="radio" name="radio" value="option14" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+      </div>
+    </div>
+    <div id="3soc-econ" style="display:none;">
+        <h4 class="section-title">Socioeconomic Conditions</h4>
+      <div class="checkbox-container">
+        <label class="container">DOT Travel Barriers
+          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Housing Burden
+          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Less than HS Education
+          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Not in Higher Education
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Historic Underinvestment
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">No Kitchen or Plumbing
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">House Value
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Rent
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Linguistic Isolation
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+      </div>
+    </div>
+    <div id="4pub-health" style="display:none;">
+        <h4 class="section-title">Public Health Outcomes</h4>
+        <div class="checkbox-container">
+          <label class="container">Adult Asthma Rate
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Adult Heart Disease Rate
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Adult Diabetes Rate
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Life Expectancy
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="5clim-risk" style="display:none;">
+        <h4 class="section-title">Climate Risk</h4>
+        <div class="checkbox-container">
+          <label class="container">Agriculture Loss Risk
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Building Loss Risk
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Population Loss Risk
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Flood Risk
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Fire Risk
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Energy Burden
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="6econ" style="display:none;">
+        <h4 class="section-title">Economic Conditions</h4>
+        <div class="checkbox-container">
+          <label class="container">Relative Household Income
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Poverty Rate (200% Threshold)
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Income Estimate From Neighbor
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Unemployment Rate
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Poverty Rate (200% Threshold)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Poverty Rate (100% Threshold)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">2010 Unemployment Rate
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">2010 Poverty (100% Threshold)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="7demo" style="display:none;">
+        <h4 class="section-title">Demographics</h4>
+        <div class="checkbox-container">
+          <label class="container">Black %
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Native American %
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Asian %
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Pacific / Native Hawaiin %
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">White %
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Hispanic %
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Mixed Race %
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Other Race %
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Children Under 10 %
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">10-64 Years Old %
+            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">64 and Older %
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Total Population
+            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="8cejs-status" style="display:none;">
+        <h4 class="section-title">White House CEJS Statuses</h4>
+        <div class="checkbox-container">
+          <label class="container">Total Thresholds Exceeded
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Total Categories Exceeded
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Disadvantaged without Neighbors
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Disadvantaged with Neighbors
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Disadvantaged - Tribal Overlap
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">% Area Disadvantaged
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="9thresh-1" style="display:none;">
+        <div class="checkbox-container">
+          <label class="container">Option 7
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Option 8
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Option 9
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div id="10thresh-2" style="display:none;">
+        <div class="checkbox-container">
+          <label class="container">Option 7
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Option 8
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Option 9
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+
+</div>
+
+
+<div id="map"></div>
+      
+<img id="top-logo" src="/Users/typham-swann/Desktop/US/logo-white.png">
+<div id="bottom-links">
+    <p class="bottom-link"><a>About</a></p>
+    <p class="bottom-link"><a>Methods</a></p>
+    <p class="bottom-link"><a>Contact</a></p>
+</div>
+<script src="scripts.js"></script>
+</div>
+  </html>
