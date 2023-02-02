@@ -56,8 +56,8 @@
             <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['adjusted_poor_200'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Rent
-            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['rent'])">
+          <label class="container">Average Home Value
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['house_value'])">
             <span class="checkmark"></span>
           </label>
 
@@ -100,59 +100,59 @@
       <div class="checkbox-container">
         <h4 class="section-title">Environmental Health</h4>
         <label class="container">Environmental Health Index
-          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['env_index'])" checked>
           <span class="checkmark"></span>
         </label>
         <label class="container">PM2.5 Pollution
-          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['PM25'])">
           <span class="checkmark"></span>
         </label>
         <label class="container">Diesel Pollution
-          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['diesel'])">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Heat Index
-            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+        <label class="container">Urban Heat Effect
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['heat'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Traffic Proximity
-            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['traffic'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Lead Paint
-            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+          <label class="container">Lead Paint Risk
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['lead'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Superfund Site Proximity
-            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this);colorSwitch(layers_dict['superfund_proximity'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Hazardous Waste Site Proximity
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this);colorSwitch(layers_dict['waste_proximity'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">RMP Facility Proximity
-            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this);colorSwitch(layers_dict['rmp_proximity'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">FUDS Site Proximity
-            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+          <label class="container">FUDS Site Presence
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this);colorSwitch(layers_dict['has_fuds'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Abandoned Mine Presence
-            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this);colorSwitch(layers_dict['has_mine'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Impervious Surface
-            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Greater than 35 Acres
-            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this)">
+          <label class="container">Impervious Surface & Cropland
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this);colorSwitch(layers_dict['impervious'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Wastewater Discharge
-            <input type="radio" name="radio" value="option13" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option13" onclick="checkboxClick(this);colorSwitch(layers_dict['wastewater'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Leaky Underground Storage Tanks
-            <input type="radio" name="radio" value="option14" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option14" onclick="checkboxClick(this);colorSwitch(layers_dict['storage_tanks'])">
             <span class="checkmark"></span>
           </label>
       </div>
@@ -161,39 +161,39 @@
         <h4 class="section-title">Socioeconomic Conditions</h4>
       <div class="checkbox-container">
         <label class="container">DOT Travel Barriers
-          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['travel_barriers_pt'])" checked>
           <span class="checkmark"></span>
         </label>
         <label class="container">Housing Burden
-          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['housing_burden'])">
           <span class="checkmark"></span>
         </label>
         <label class="container">Less than HS Education
-          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['less_than_hs'])">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Not in Higher Education
-            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+        <label class="container">Not Currently in Higher Education
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['not_in_higher_ed'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Historic Underinvestment
-            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['historic_underinvestment'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">No Kitchen or Plumbing
-            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['no_kitchen_plumbing'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">House Value
-            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this);colorSwitch(layers_dict['house_value'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Rent
-            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this);colorSwitch(layers_dict['rent'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Linguistic Isolation
-            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this);colorSwitch(layers_dict['linguistic_isolation'])">
             <span class="checkmark"></span>
           </label>
       </div>
@@ -202,19 +202,19 @@
         <h4 class="section-title">Public Health Outcomes</h4>
         <div class="checkbox-container">
           <label class="container">Adult Asthma Rate
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['asthma'])" checked>
             <span class="checkmark"></span>
           </label>
           <label class="container">Adult Heart Disease Rate
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['heart'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Adult Diabetes Rate
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['diabetes'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Life Expectancy
-            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['life_expectancy'])">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -222,28 +222,28 @@
       <div id="5clim-risk" style="display:none;">
         <h4 class="section-title">Climate Risk</h4>
         <div class="checkbox-container">
-          <label class="container">Agriculture Loss Risk
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Building Loss Risk
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Population Loss Risk
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
           <label class="container">Flood Risk
-            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['flood_risk'])" checked>
             <span class="checkmark"></span>
           </label>
           <label class="container">Fire Risk
-            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['fire_risk'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Population Loss Risk
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['pop_loss_rate'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Agriculture Loss Risk
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['ag_loss_rate'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Building Loss Risk
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['building_loss_rate'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Energy Burden
-            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['energy_burden'])">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -251,40 +251,40 @@
       <div id="6econ" style="display:none;">
         <h4 class="section-title">Economic Conditions</h4>
         <div class="checkbox-container">
-          <label class="container">Relative Household Income
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Poverty Rate (200% Threshold)
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Low Income
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Income Estimate From Neighbor
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <label class="container">Adjusted Poverty Rate
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['adjusted_poor_200'])" checked>
             <span class="checkmark"></span>
           </label>
           <label class="container">Unemployment Rate
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['unemployment'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['is_low_income'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Income Estimate From Neighbor
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['income_from_neighbor'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Relative Household Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['hhinc_divided_area'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Poverty Rate (200% Threshold)
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['poor_200'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Poverty Rate (100% Threshold)
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['poor_100'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">2010 Unemployment Rate
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['unemployment_2010'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">2010 Poverty (100% Threshold)
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['poor_2010'])">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -292,52 +292,56 @@
       <div id="7demo" style="display:none;">
         <h4 class="section-title">Demographics</h4>
         <div class="checkbox-container">
-          <label class="container">Black %
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Native American %
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Asian %
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Pacific / Native Hawaiin %
-            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
           <label class="container">White %
-            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['share_white'])" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Black %
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['share_black'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Hispanic %
-            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['share_hispanic'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Asian %
+            <input type="radio" name="radio" value="option4" onclick="checkboxClick(this);colorSwitch(layers_dict['share_asian'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Native American %
+            <input type="radio" name="radio" value="option5" onclick="checkboxClick(this);colorSwitch(layers_dict['share_natam'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Pacific / Native Hawaiian %
+            <input type="radio" name="radio" value="option6" onclick="checkboxClick(this);colorSwitch(layers_dict['share_pacific'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Mixed Race %
-            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option7" onclick="checkboxClick(this);colorSwitch(layers_dict['share_mixed'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Other Race %
-            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option8" onclick="checkboxClick(this);colorSwitch(layers_dict['share_other'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Children Under 10 %
-            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option9" onclick="checkboxClick(this);colorSwitch(layers_dict['share_child'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">10-64 Years Old %
-            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option10" onclick="checkboxClick(this);colorSwitch(layers_dict['share_adult'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">64 and Older %
-            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this)">
+          <label class="container">65 and Older %
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this);colorSwitch(layers_dict['share_senior'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Tribal Overlap
+            <input type="radio" name="radio" value="option11" onclick="checkboxClick(this);colorSwitch(layers_dict['percentage_tribal_area'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Total Population
-            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option12" onclick="checkboxClick(this);colorSwitch(layers_dict['total_population'])">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -346,59 +350,175 @@
         <h4 class="section-title">White House CEJS Statuses</h4>
         <div class="checkbox-container">
           <label class="container">Total Thresholds Exceeded
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['thresh_exceeded'])" checked>
             <span class="checkmark"></span>
           </label>
           <label class="container">Total Categories Exceeded
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['cat_exceeded'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Disadvantaged
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['disadvantaged'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Disadvantaged without Neighbors
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['disadvantaged_without_neighbors'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Disadvantaged with Neighbors
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['disadvantaged_with_neighbors'])">
             <span class="checkmark"></span>
           </label>
           <label class="container">Disadvantaged - Tribal Overlap
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">% Area Disadvantaged
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['disadvanted_tribal'])">
             <span class="checkmark"></span>
           </label>
         </div>
       </div>
       <div id="9thresh-1" style="display:none;">
         <div class="checkbox-container">
-          <label class="container">Option 7
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <label class="container">PM.25 Pollution & Low Income
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['th_25_inc'])" checked>
             <span class="checkmark"></span>
           </label>
-          <label class="container">Option 8
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <label class="container">Agriculture Loss & Low Income
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['th_ag_inc'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Option 9
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <label class="container">Asthma & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_asthma_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Transit Barriers & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_barriers_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Building Loss & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_building_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Diabetes & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_diabetes_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Diesel Pollution & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_diesel_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Energy Burden & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_energy_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Fire Risk
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_fire'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Flood Risk & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_flood_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Fire Risk & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_fire_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Flood Risk
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_flood'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">FUDS Proximity & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_fuds_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Heart Disease & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_heart_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Relative Income & Low Education
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_hhinc_area_hs_attainment'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Relative Income & Education (2010)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_hhinc_area_hs_attainment_2010'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Housing Burden & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_housing_burden_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Impervious Surface / Cropland
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_impervious'])">
             <span class="checkmark"></span>
           </label>
         </div>
       </div>
       <div id="10thresh-2" style="display:none;">
         <div class="checkbox-container">
-          <label class="container">Option 7
-            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this)" checked>
+          <label class="container">Impervious Surface & Low Income
+            <input type="radio" name="radio" value="option1" onclick="checkboxClick(this);colorSwitch(layers_dict['th_impervious_inc'])" checked>
             <span class="checkmark"></span>
           </label>
-          <label class="container">Option 8
-            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this)">
+          <label class="container">Lead Paint Risk & Low Income
+            <input type="radio" name="radio" value="option2" onclick="checkboxClick(this);colorSwitch(layers_dict['th_lead_house_value_inc'])">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Option 9
-            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this)">
+          <label class="container">Low Life Expectancy & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_life_expectancy_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Linguistic Isolation & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_linguistic_isolation_hs_attainment'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Abandoned Mine & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_mine_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Poverty & Low Education
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_poor_100_hs_attainment'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Population Loss Risk & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_pop_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Poverty & Education (2010)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_poverty_100_hs_attainment_2010'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">RMP Proximity & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_rmp_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Leaky Storage Tanks & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_storage_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Superfund Proximity & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_superfund_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Traffic Proximity & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_traffic_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Underinvestment & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_underinvestment_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">High Unemployment & Low Education
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_unemployment_hs_attainment'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Unemployment & Education (2010)
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_unemployment_hs_attainment_2010'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Waste Site Proximity & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_waste_inc'])">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Wastewater & Low Income
+            <input type="radio" name="radio" value="option3" onclick="checkboxClick(this);colorSwitch(layers_dict['th_wastewater_inc'])">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -408,8 +528,22 @@
 
 
 <div id="map"></div>
+<div id="zoom-tract-info">
+  <span id="top-note"></span>
+  <h5 id="title-notice">Data Notice</h5>
+  <h5 id="notice-body"><span style="font-weight:600;color:red">Note:</span> This data layer only has data at the census-tract level. To see the data, click on a county, zoom in, or search an address or location.</h5>
+</div>
+<img src="./key-images/county-keys/env_index.png" id="legend"/>
+
+<div id="box">
+<div id="info-box"></div>
+<img id="triangle" src="./county-triangles/env_index.png">
+<p id="value"></p>
+<p id="tab-name"></p>
+</div>
+
       
-<img id="top-logo" src="/Users/typham-swann/Desktop/US/logo-white.png">
+<img id="top-logo" src="./logo-white.png">
 <div id="bottom-links">
     <p id="about" class="bottom-link"><a>About</a></p>
     <p id="methods" class="bottom-link"><a>Methods</a></p>

@@ -55,8 +55,8 @@
 
 .geocoder{
   position:absolute;
-  left:21rem;
-  top:1rem;
+  left:20.5rem;
+  top:0.5rem;
   bottom:0;
 }
 
@@ -232,3 +232,86 @@ z-index: -1;
 #methods{
   left:12.8rem;
 }
+
+h5{
+  font-weight:100;
+  font-family: 'Inter', sans-serif;
+}
+
+#zoom-tract-info{
+  display: none;
+  background-color: white;
+  position:absolute;
+  width:23rem;
+  height:7rem;
+  top:1rem;
+  left:40rem;
+}
+
+#title-notice{
+  background-color: #1D4D99;
+  color:white;
+  margin-top:0rem;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  padding-left:0.5rem;
+  font-weight:600;
+  font-size:0.95rem;
+  padding-bottom:0.5rem;
+  margin-bottom:0;
+}
+
+
+#notice-body{
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  padding-top:0;
+  margin-top:1rem;
+}
+
+#legend{
+  position:absolute;
+  bottom:2rem;
+  right:1rem;
+  width:19rem;
+}
+
+#info-box{
+  position:absolute;
+  left:20.5rem;
+  top:3.25rem;
+  bottom:0;
+  background-color: white;
+  width:14.95rem;
+  height: 14.5rem;
+}
+
+#triangle{
+  position:absolute;
+  left:22rem;
+  top:6.5rem;
+  bottom:0;
+  width:11rem;
+}
+
+#value{
+  position:absolute;
+  left:21rem;
+  top:13.75rem;
+  font-family: 'Inter';
+  color:#1D4D99;
+  font-size:1.3rem;
+  font-weight:600;
+}
+
+#tab-name{
+  position:absolute;
+  left:20.5rem;
+  top:2.4rem;
+  font-family: 'Inter';
+  color: #1D4D99;
+  font-size:1rem;
+  font-weight:600;
+  padding:0.9rem;
+}
+
